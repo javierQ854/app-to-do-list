@@ -9,7 +9,21 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'http://localhost:3000/',
+      url: 'http://localhost:3000/api',
+    },
+  ],
+  components: {
+    securitySchemes: {
+      bearerAuth: {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      },
+    },
+  },
+  security: [
+    {
+      bearerAuth: [],
     },
   ],
 };
