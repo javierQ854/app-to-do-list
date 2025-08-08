@@ -1,5 +1,5 @@
 import axisos from 'axios';
-const API_URL = 'http://localhost:300/api';
+const API_URL = 'http://3.16.111.0:3000/api';
 const getAuthHeaders = () => {
     const token = localStorage.getItem('token');
     return {
@@ -8,7 +8,7 @@ const getAuthHeaders = () => {
         }
     };
 }
-export const getTasks = async () => await axisos.get(`${API_URL}/tasks`, getAuthHeaders());
-export const createTask = async (taskData) => await axisos.post(`${API_URL}/tasks`, taskData, getAuthHeaders());
-export const updateTask = async (id, taskData) => await axisos.put(`${API_URL}/tasks/${id}`, taskData, getAuthHeaders());
-export const deleteTask = async (id) => await axisos.delete(`${API_URL}/tasks/${id}`, getAuthHeaders());
+export const getTasks = async (userId) => await axisos.get(`${API_URL}/task/${userId}`, getAuthHeaders());
+export const createTask = async (taskData) => await axisos.post(`${API_URL}/task`, taskData, getAuthHeaders());
+export const updateTask = async (id, taskData) => await axisos.put(`${API_URL}/task/${id}`, taskData, getAuthHeaders());
+export const deleteTask = async (id) => await axisos.delete(`${API_URL}/task/${id}`, getAuthHeaders());
