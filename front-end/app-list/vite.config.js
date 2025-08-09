@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   
   // eslint-disable-next-line no-undef
-  base: process.env.NODE_ENV === 'production' ? '/app-to-do-list/' : '/',
+  base: '/app-to-do-list/',
   build: {
     outDir: 'dist'
   }

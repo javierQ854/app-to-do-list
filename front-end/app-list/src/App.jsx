@@ -13,7 +13,7 @@ const PrivateRoutes = ({ children }) => {
 
 function App() {
   return (
-    <AuthProvider> {/* ✅ Aquí envuelves toda tu app */}
+    <AuthProvider> 
       <HashRouter >
         <Routes>
           <Route path="/" element={<Login />} />
