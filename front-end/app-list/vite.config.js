@@ -5,7 +5,9 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/app-to-do-list/', // 👈 nombre EXACTO del repo en GitHub
+  
+  // eslint-disable-next-line no-undef
+  base: process.env.NODE_ENV === 'production' ? '/app-to-do-list/' : '/',
   build: {
     outDir: 'dist'
   }

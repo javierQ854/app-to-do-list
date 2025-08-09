@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { login as servicelogin } from '../services/authService';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const Login = () => {
   return (
     <section className="min-h-screen w-full flex justify-center items-center bg-gradient-to-br from-indigo-700 via-blue-500 to-purple-600 p-4">
       <div className="backdrop-blur-xl bg-white/10 border border-white/30 rounded-2xl shadow-2xl w-full max-w-sm p-8 animate-fadeIn hover:scale-[1.02] transition-transform duration-300">
-        
+
         {/* Logo y título */}
         <div className="flex flex-col items-center mb-6">
           <img src="./logo.png" alt="Logo" className="w-20 h-20 mb-2 drop-shadow-lg" />
@@ -60,9 +61,9 @@ const Login = () => {
           </button>
           <p className="text-white/80 text-center text-sm mt-2">
             ¿No tienes una cuenta?{' '}
-            <a href="/register" className="text-blue-300 hover:underline">
+            <Link to="/register" className="text-blue-300 hover:underline">
               Regístrate
-            </a>
+            </Link>
           </p>
         </form>
       </div>

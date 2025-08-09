@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, HashRouter } from 'react-router-dom';
 import { AuthContext, AuthProvider } from './context/AuthContext'; // ✅ importar AuthProvider
 import { useContext } from 'react';
 import Login from './pages/Login';
@@ -14,11 +14,11 @@ const PrivateRoutes = ({ children }) => {
 function App() {
   return (
     <AuthProvider> {/* ✅ Aquí envuelves toda tu app */}
-      <BrowserRouter basename='/app-to-do-list/'> {/* Asegúrate de que el basename sea correcto */}
+      <BrowserRouter >
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/tasks/:userId" element={<PrivateRoutes><Tasks /></PrivateRoutes>} /> 
+          <Route path="/tasks/:userId" element={<PrivateRoutes><Tasks /></PrivateRoutes>} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

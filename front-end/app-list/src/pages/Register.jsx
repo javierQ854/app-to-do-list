@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { register as serviceregister } from '../services/authService';
 import { useNavigate } from 'react-router-dom';
-const Login = () => {
+const Register = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         username: '',
@@ -19,7 +19,7 @@ const Login = () => {
         try {
             await serviceregister(formData);
             alert('Usuario registrado correctamente');
-            navigate('/login');
+            navigate('/');
         } catch (error) {
             console.error(error.response?.data.message || 'Error al registrar usuario');
         }
@@ -37,7 +37,7 @@ const Login = () => {
                         onChange={handleChange}
                         className="w-full p-3 rounded-lg bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
                         type="text"
-                        placeholder="Usuario" />
+                        placeholder="usuario" />
                     <input
                         name="password_user"
                         onChange={handleChange}
@@ -50,9 +50,10 @@ const Login = () => {
                         <a href="/" className="text-blue-300 hover:underline">
                             Inicia sesión
                         </a>
-                    </p>                </form>
+                    </p>
+                </form>
             </div>
         </section>
     );
 }
-export default Login;
+export default Register;
