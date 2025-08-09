@@ -14,7 +14,7 @@ const PrivateRoutes = ({ children }) => {
 function App() {
   return (
     <AuthProvider> {/* ✅ Aquí envuelves toda tu app */}
-      <HashRouter basename={import.meta.env.PROD ? '/app-to-do-list' : '/'}>
+      <HashRouter >
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
