@@ -14,13 +14,13 @@ const PrivateRoutes = ({ children }) => {
 function App() {
   return (
     <AuthProvider> {/* ✅ Aquí envuelves toda tu app */}
-      <BrowserRouter basename={import.meta.env.PROD ? '/app-to-do-list' : '/'}>
+      <HashRouter basename={import.meta.env.PROD ? '/app-to-do-list' : '/'}>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/tasks/:userId" element={<PrivateRoutes><Tasks /></PrivateRoutes>} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AuthProvider>
   );
 }
