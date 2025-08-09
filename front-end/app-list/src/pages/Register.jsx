@@ -47,9 +47,9 @@ const Register = () => {
                     <button className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] transition-transform duration-200" type="submit">Registrar</button>
                     <p className="text-white/80 text-center text-sm mt-2">
                         ¿Ya tienes una cuenta?{' '}
-                        <a href="/" className="text-blue-300 hover:underline">
+                        <Link to="/" className="text-blue-300 hover:underline">
                             Inicia sesión
-                        </a>
+                        </Link>
                     </p>
                 </form>
             </div>
