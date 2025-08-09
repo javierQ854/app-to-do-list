@@ -8,9 +8,12 @@ const swaggerDefinition = {
     description: 'Documentación de la API de usuarios',
   },
   servers: [
+
     {
-      url: 'http://localhost:3000/api',
-    },
+      url: 'https://proyects.sytes.net/api',
+      description: 'Servidor producción (HTTPS)',
+    }
+
   ],
   components: {
     securitySchemes: {

@@ -1,5 +1,5 @@
 import axisos from 'axios';
-const API_URL = 'http://3.16.111.0:3000/api';
+const API_URL = 'https://proyects.sytes.net/api';
 const getAuthHeaders = () => {
     const token = localStorage.getItem('token');
     return {
