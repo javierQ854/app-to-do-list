@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { register as serviceregister } from '../services/authService';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const Register = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
