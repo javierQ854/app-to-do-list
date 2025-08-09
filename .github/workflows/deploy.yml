@@ -3,7 +3,7 @@ name: Deploy Frontend to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main 
 
 jobs:
   build-and-deploy:
@@ -17,15 +17,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm' # cachea dependencias para acelerar builds
+          cache: 'npm'
+          cache-dependency-path: front-end/package-lock.json
 
       - name: Install dependencies
-        working-directory: front-end
-        run: npm ci # instalación limpia y rápida
+        run: |
+          cd front-end
+          npm install
 
       - name: Build project
-        working-directory: front-end
-        run: npm run build
+        run: |
+          cd front-end
+          npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
