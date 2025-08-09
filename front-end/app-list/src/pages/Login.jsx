@@ -63,7 +63,7 @@ const Login = () => {
             ¿No tienes una cuenta?{' '}
             <Link to="/register" className="text-blue-300 hover:underline">
               Regístrate
-            </Link>
+            </Link>       
           </p>
         </form>
       </div>

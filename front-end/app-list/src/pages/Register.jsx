@@ -33,7 +33,7 @@ const Register = () => {
                     <h2 className="text-white font-bold text-2xl">Registrarse</h2>
                 </div>
                 <form action="" onSubmit={handleSubmit} className="flex flex-col gap-4">
-                    <input
+                    <input     
                         name="username"
                         onChange={handleChange}
                         className="w-full p-3 rounded-lg bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
