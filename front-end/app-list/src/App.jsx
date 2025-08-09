@@ -14,7 +14,7 @@ const PrivateRoutes = ({ children }) => {
 function App() {
   return (
     <AuthProvider> {/* ✅ Aquí envuelves toda tu app */}
-      <BrowserRouter>
+      <BrowserRouter basename='/app-to-do-list/'> {/* Asegúrate de que el basename sea correcto */}
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
