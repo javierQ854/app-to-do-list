@@ -18,20 +18,20 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: front-end/package-lock.json
+          cache-dependency-path: front-end/app-list/package-lock.json
 
       - name: Install dependencies
         run: |
-          cd front-end
+          cd front-end/app-list
           npm ci
 
       - name: Build project
         run: |
-          cd front-end
+          cd front-end/app-list
           npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: front-end/dist
+          publish_dir: front-end/app-list/dist
