@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { createTask as createTaskService, getTasks, deleteTask, updateTask } from '../services/taskService';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Tasks = () => {
+    const navigate = useNavigate();
     const { userId } = useParams();
     const [modalOpen, setModalOpen] = useState(false);
     const [edit, setEdit] = useState(null);
@@ -79,7 +81,7 @@ const Tasks = () => {
     };
     const exit = () => {
         localStorage.removeItem('token');
-        window.location.href = '/';
+        navigate('/');
     };
 
     return (
