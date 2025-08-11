@@ -86,13 +86,15 @@ const Tasks = () => {
 
     return (
         <section className="min-h-screen w-full flex flex-col gap-4 items-center bg-gradient-to-br from-indigo-700 via-blue-500 to-purple-600 ">
-            <div className='min-w-screen flex p-2 items-center justify-between'>
-                <h1 className="text-3xl md:min-w-screen md:text-center font-bold text-white ">Tareas</h1>
-                <div className='p-2 md:hidden flex gap-2'>
-                    <button onClick={() => setModalOpen(true)}>
+            <div className='container mx-auto flex justify-between items-center py-5 px-4'>
+                <h1 className="text-2xl md:text-3xl text-white font-bold">Tareas</h1>
+                <div className='p-2 flex gap-2'>
+                    <button className='md:hidden' onClick={() => setModalOpen(true)}>
                         <iconify-icon className="cursor-pointer" title="Agregar tarea" icon="gg:add" width="24" height="24"></iconify-icon>
                     </button>
-                    <iconify-icon onClick={exit} className="cursor-pointer" title="Cerrar sesión" icon="mdi:logout" width="24" height="24"></iconify-icon>
+                    <button>
+                        <iconify-icon onClick={exit} className="cursor-pointer" title="Cerrar sesión" icon="mdi:logout" width="24" height="24"></iconify-icon>
+                    </button>
                 </div>
             </div>
 
